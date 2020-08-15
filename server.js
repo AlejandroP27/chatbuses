@@ -31,6 +31,16 @@ serverSocket.on('connect', function(socket){
         serverSocket.emit('chat msg', msg)
     })
 
+    socket.on('message', (mes) => {
+        socket.forEach(element => {
+            if (element != socket)
+                element.sendUTF(mes.utf8Data)
+                })
+            })
+    
+
+
+
     socket.on('disconnect', function(){
         console.log('Cliente desconectado: ' + socket.nickname)
     })
