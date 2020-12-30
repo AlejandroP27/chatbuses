@@ -28,9 +28,8 @@ serverSocket.on('connect', function(socket){
         socket.nickname = nickname
         const msg = nickname + ' conectou'
         console.log(msg)
-        serverSocket.emit('chat msg', msg)
+        serverSocket.emit('login', msg)
     })
-
 
     socket.on('disconnect', function(){
         console.log('Cliente desconectado: ' + socket.nickname)
