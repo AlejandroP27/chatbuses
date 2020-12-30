@@ -37,7 +37,8 @@ serverSocket.on('connect', function(socket){
     })
         
     socket.on('chat msg', function(msg){
-        serverSocket.emit('chat msg', `${socket.nickname} diz: ${msg}`)
+        serverSocket.emit('chat msg', msg)
+        //serverSocket.emit('chat msg', `${socket.nickname} diz: ${msg}`)
     })
 
     socket.on('status', function(msg){
